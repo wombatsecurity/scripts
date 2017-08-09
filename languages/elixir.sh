@@ -10,7 +10,7 @@
 #
 # Include in your builds via
 # source /dev/stdin <<< "$(curl -sSL https://raw.githubusercontent.com/codeship/scripts/master/languages/elixir.sh)"
-ELIXIR_VERSION=${ELIXIR_VERSION:="1.2.3"}
+ELIXIR_VERSION=${ELIXIR_VERSION:="1.5.1"}
 ELIXIR_PATH=${ELIXIR_PATH:=$HOME/elixir}
 CACHED_DOWNLOAD="${HOME}/cache/elixir-v${ELIXIR_VERSION}.zip"
 
