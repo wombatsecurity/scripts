@@ -10,15 +10,15 @@
 #
 # Include in your builds via
 # source /dev/stdin <<< "$(curl -sSL https://raw.githubusercontent.com/codeship/scripts/master/languages/elixir.sh)"
-ELIXIR_VERSION=${ELIXIR_VERSION:="1.5.1"}
+ELIXIR_VERSION=${ELIXIR_VERSION:="1.5.3"}
 ELIXIR_PATH=${ELIXIR_PATH:=$HOME/elixir}
 CACHED_DOWNLOAD="${HOME}/cache/elixir-v${ELIXIR_VERSION}.zip"
 
 # no set -e because this file is sourced and with the option set a failing command
 # would cause an infrastructur error message on Codeship.
 mkdir -p "${ELIXIR_PATH}"
-
-wget --continue --output-document "${CACHED_DOWNLOAD}" "https://s3.amazonaws.com/s3.hex.pm/builds/elixir/v${ELIXIR_VERSION}.zip"
+# wget --continue --output-document "${CACHED_DOWNLOAD}" "https://s3.amazonaws.com/s3.hex.pm/builds/elixir/v${ELIXIR_VERSION}.zip"
+wget --continue --output-document "${CACHED_DOWNLOAD}" "https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip"
 unzip -q -o "${CACHED_DOWNLOAD}" -d "${ELIXIR_PATH}"
 
 export PATH="${ELIXIR_PATH}/bin:${PATH}"
