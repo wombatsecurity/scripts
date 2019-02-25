@@ -64,6 +64,9 @@ query_cache_size        = 16M
 # * Logging and Replication
 log_error		= ${MYSQL_DIR}/log/error.log
 
+sql_mode=NO_ENGINE_SUBSTITUTION
+
+
 [mysqldump]
 quick
 quote-names
